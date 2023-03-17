@@ -1,7 +1,8 @@
+[System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12;
 function transfer ($filename)
 {
     $file = Get-Item $filename;
     invoke-webrequest -method put -infile $file.FullName https://transfer.sh
 }
 
-transfer("C:\programfiles\data.txt")
+transfer("C:\programdata\data.txt")
