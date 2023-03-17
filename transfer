@@ -2,7 +2,7 @@
 function transfer ($filename)
 {
     $file = Get-Item $filename;
-    invoke-webrequest -method put -infile $file.FullName https://transfer.sh
+    (Invoke-WebRequest -Method PUT -InFile $file.FullName -Uri https://transfer.sh/$($file.Name)).Content
 }
 
 transfer("C:\programdata\data.txt")
